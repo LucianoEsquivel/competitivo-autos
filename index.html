@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dietrich - Dashboard Comercial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">DIETRICH</div>
+        <div class="header-controls">
+            
+            <!-- NUEVO: Controles de moneda agrupados (ocultos por defecto) -->
+            <div id="controles-moneda" class="controles-wrapper hidden">
+                <div class="cotizacion-box">
+                    <a href="https://dolarhoy.com/" target="_blank" class="btn-dolar-link">VALOR DÓLAR:</a>
+                    <input type="number" id="input-dolar" value="1000" step="10">
+                </div>
+
+                <div class="toggle-moneda">
+                    <button class="btn-moneda active" data-moneda="AMBAS">AMBAS</button>
+                    <button class="btn-moneda" data-moneda="USD">USD</button>
+                    <button class="btn-moneda" data-moneda="ARS">ARS</button>
+                </div>
+            </div>
+
+            <!-- Botones de Navegación -->
+            <button id="btn-volver" class="hidden">VOLVER</button>
+            <button id="btn-home" class="hidden">INICIO</button>
+        </div>
+    </header>
+
+    <main id="app-container">
+        <!-- VISTA 1: MARCAS -->
+        <section id="vista-marcas" class="view">
+            <h2>Seleccione una Marca</h2>
+            <div id="grid-marcas" class="grid-menu"></div>
+        </section>
+
+        <!-- VISTA 2: FAMILIAS / MODELOS -->
+        <section id="vista-familias" class="view hidden">
+            <h2 id="titulo-familias">Familia de Vehículos</h2>
+            <div id="grid-familias" class="grid-menu"></div>
+        </section>
+
+        <!-- VISTA 3: VERSIONES -->
+        <section id="vista-versiones" class="view hidden">
+            <h2 id="titulo-versiones">Seleccione la Versión</h2>
+            <div id="grid-versiones" class="grid-menu"></div>
+        </section>
+
+        <!-- VISTA 4: DASHBOARD COMERCIAL (COMPARADOR) -->
+        <section id="vista-dashboard" class="view hidden">
+            <div class="filtros-alternativas">
+                <span>Filtros sugeridos:</span>
+                <button class="btn-filtro" data-filtro="4x4">Tracción 4x4</button>
+                <button class="btn-filtro" data-filtro="4x2">Tracción 4x2</button>
+                <button class="btn-filtro" data-filtro="AT">Automático</button>
+                <button class="btn-filtro" data-filtro="MT">Manual</button>
+                <button class="btn-filtro active" data-filtro="TODOS">Todos</button>
+            </div>
+            
+            <div class="dashboard-layout">
+                <!-- Tarjeta Principal (Fija) -->
+                <div id="tarjeta-principal" class="zona-principal"></div>
+                
+                <!-- Tarjetas Alternativas (Arrastrables) -->
+                <div id="contenedor-alternativas" class="zona-alternativas"></div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="app.js" defer></script>
+</body>
+</html>
