@@ -268,21 +268,21 @@ export const volkswagen = [
 
     { 
         id: "39VW", marca: "Volkswagen", modelo: "Tiguan", version: "Life", precioOferta: 77574100, precioLista: 77574100,
-        segmento: "SUV", tipo: "SUV D", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV D", foto:"tiguanLIFE.png",
         specs: { motor: "1.4 Turbo 250 TSI", potencia: "150 CV", traccion: "4x2", transmision: "6 AT", torque: "250 Nm", capacidadCarga: " 230 L / 685 L" },
         tags: [] 
     },
 
     { 
         id: "40VW", marca: "Volkswagen", modelo: "Tiguan", version: "R-Line", precioOferta: 79500000, precioLista: 81647800,
-        segmento: "SUV", tipo: "SUV D", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV D", foto:"tiguanRLINE.png",
         specs: { motor: "2.0 Turbo", potencia: "220 CV", traccion: "AWD", transmision: "7 AT", torque: "350 Nm", capacidadCarga: " 230 L / 685 L" },
         tags: [] 
     },
 
     { 
         id: "41VW", marca: "Volkswagen", modelo: "Vento", version: "GLI", precioOferta: 67200000, precioLista: 72746050,
-        segmento: "Sedan", tipo: "Sedan C", /*foto:"",*/
+        segmento: "Sedan", tipo: "Sedan C", foto:"ventoGLI.png",
         specs: { motor: "2.0 Turbo TSI", potencia: "230 CV", traccion: "4x2", transmision: "7 AT", torque: "350 Nm", capacidadCarga: "510 L" },
         tags: [] 
     },
