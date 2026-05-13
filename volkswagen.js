@@ -107,35 +107,35 @@ export const volkswagen = [
 
     {  
         id: "16VW", marca: "Volkswagen", modelo: "Nivus", version: "170 TSI", precioOferta: 30900000, precioLista: 43554600,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"nivus170.png",
         specs: { motor: "1.0 Turbo", potencia: "95 CV", traccion: "4x2", transmision: "5 MT", torque: "165 Nm", capacidadCarga: "415 L" },
         tags: [] 
     },
 
     { 
         id: "17VW", marca: "Volkswagen", modelo: "Nivus", version: "Trendile 200 TSI", precioOferta: 34000000, precioLista: 46232750,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"nivusTREND.png",
         specs: { motor: "1.0 Turbo", potencia: "116 CV", traccion: "4x2", transmision: "6 AT", torque: "200 Nm", capacidadCarga: "415 L" },
         tags: [] 
     },
 
     { 
         id: "18VW", marca: "Volkswagen", modelo: "Nivus", version: "Comfortline 200 TSI", precioOferta: 36300000, precioLista: 48915850,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"nivusCOMFORT.png",
         specs: { motor: "1.0 Turbo", potencia: "116 CV", traccion: "4x2", transmision: "6 AT", torque: "200 Nm", capacidadCarga: "415 L" },
         tags: [] 
     },
 
     { 
         id: "19VW", marca: "Volkswagen", modelo: "Nivus", version: "Highline 200 TSI", precioOferta: 39500000, precioLista: 52815650,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"nivusHIGHLINE.png",
         specs: { motor: "1.0 Turbo", potencia: "116 CV", traccion: "4x2", transmision: "6 AT", torque: "200 Nm", capacidadCarga: "415 L" },
         tags: [] 
     },
 
     { 
         id: "20VW", marca: "Volkswagen", modelo: "Nivus", version: "Highline Outfit 200 TSI", precioOferta: 40700000, precioLista: 54029100,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"nivusOUTFIT.png",
         specs: { motor: "1.0 Turbo", potencia: "116 CV", traccion: "4x2", transmision: "6 AT", torque: "200 Nm", capacidadCarga: "415 L" },
         tags: [] 
     },
