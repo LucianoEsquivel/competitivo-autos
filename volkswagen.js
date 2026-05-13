@@ -219,21 +219,21 @@ export const volkswagen = [
 
     { 
         id: "32VW", marca: "Volkswagen", modelo: "Taos", version: "Comfortline 250TSI AT", precioOferta: 46200000, precioLista: 57511950,
-        segmento: "SUV", tipo: "SUV C", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV C", foto:"taosCOMFORT.png",
         specs: { motor: "1.4 Turbo", potencia: "150 CV", traccion: "4x2", transmision: "6 AT", torque: "250 Nm", capacidadCarga: "498 L" },
         tags: [] 
     },
 
     { 
         id: "33VW", marca: "Volkswagen", modelo: "Taos", version: "Highline 250TSI AT", precioOferta: 53700000, precioLista: 65470200,
-        segmento: "SUV", tipo: "SUV C", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV C", foto:"taosHIGH.png",
         specs: { motor: "1.4 Turbo", potencia: "150 CV", traccion: "4x2", transmision: "6 AT", torque: "250 Nm", capacidadCarga: "498 L" },
         tags: [] 
     },
 
     { 
         id: "34VW", marca: "Volkswagen", modelo: "Taos", version: "Highline Bi Tono 250TSI AT", precioOferta: 54500000, precioLista: 66319150,
-        segmento: "SUV", tipo: "SUV C", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV C", foto:"taosBI.png",
         specs: { motor: "1.4 Turbo", potencia: "150 CV", traccion: "4x2", transmision: "6 AT", torque: "250 Nm", capacidadCarga: "498 L" },
         tags: [] 
     },
