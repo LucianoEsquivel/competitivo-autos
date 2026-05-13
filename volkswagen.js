@@ -142,42 +142,42 @@ export const volkswagen = [
 
     { 
         id: "21VW", marca: "Volkswagen", modelo: "Polo", version: "Track", precioOferta: 26500000, precioLista: 37567500,
-        segmento: "Hatchback", tipo: "Hatch B", /*foto:"",*/
+        segmento: "Hatchback", tipo: "Hatch B", foto:"poloTRACK.png",
         specs: { motor: "1.0 MPI", potencia: "84 CV", traccion: "4x2", transmision: "5 MT", torque: "101 Nm", capacidadCarga: "300 L" },
         tags: [] 
     },
 
     { 
         id: "22VW", marca: "Volkswagen", modelo: "Polo", version: "Comfortline", precioOferta: 31600000, precioLista: 43768250,
-        segmento: "Hatchback", tipo: "Hatch B", /*foto:"",*/
+        segmento: "Hatchback", tipo: "Hatch B", foto:"poloCOMFORT.png",
         specs: { motor: "1.0 Turbo", potencia: "101 CV", traccion: "4x2", transmision: "6 AT", torque: "170 Nm", capacidadCarga: "300 L" },
         tags: [] 
     },
 
     { 
         id: "23VW", marca: "Volkswagen", modelo: "Polo", version: "Highline", precioOferta: 37900000, precioLista: 47341650,
-        segmento: "Hatchback", tipo: "Hatch B", /*foto:"",*/
+        segmento: "Hatchback", tipo: "Hatch B", foto:"poloHIGHLINE.png",
         specs: { motor: "1.0 Turbo", potencia: "101 CV", traccion: "4x2", transmision: "6 AT", torque: "170 Nm", capacidadCarga: "300 L" },
         tags: [] 
     },
 
     { 
         id: "24VW", marca: "Volkswagen", modelo: "Saveiro", version: "CS Trendline", precioOferta: 43098250, precioLista: 43098250,
-        segmento: "Pickup", tipo: "Compacta", /*foto:"",*/
+        segmento: "Pickup", tipo: "Compacta", foto:"saveiroTREND.png",
         specs: { motor: "1.6 MSI", potencia: "110 CV", traccion: "4x2", transmision: "5 MT", torque: "155 Nm", capacidadCarga: "712 Kg" },
         tags: [] 
     },
 
     { 
         id: "25VW", marca: "Volkswagen", modelo: "Saveiro", version: "CD Comfortline", precioOferta: 45961500, precioLista: 45961500,
-        segmento: "Pickup", tipo: "Compacta", /*foto:"",*/
+        segmento: "Pickup", tipo: "Compacta", foto:"saveiroCOMFORT.png",
         specs: { motor: "1.6 MSI", potencia: "110 CV", traccion: "4x2", transmision: "5 MT", torque: "155 Nm", capacidadCarga: "668 Kg" },
         tags: [] 
     },
 
     { 
         id: "26VW", marca: "Volkswagen", modelo: "Saveiro", version: "CD Extreme", precioOferta: 32800000, precioLista: 50973100,
-        segmento: "Pickup", tipo: "Compacta", /*foto:"",*/
+        segmento: "Pickup", tipo: "Compacta", foto:"saveiroEX.png",
         specs: { motor: "1.6 MSI", potencia: "110 CV", traccion: "4x2", transmision: "5 MT", torque: "155 Nm", capacidadCarga: "638 Kg" },
         tags: [] 
     },
