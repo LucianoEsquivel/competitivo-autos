@@ -247,7 +247,7 @@ export const ford = [
 
     { 
         id: "36F", marca:"Ford", modelo:"Minibus", version:"AT", precioOferta: 102929220, precioLista: 102929220,
-        segmento: "Utilitario", tipo: "minibus", foto:"transitMINIBUSAT.jpg",
+        segmento: "Utilitario", tipo: "minibus", foto:"transitMINIBUS.jpg",
         specs: { motor: "2.0L Panther", potencia: "165 CV", traccion: "4x2", transmision: "10 AT", torque: "390 Nm", capacidadCarga: "1281 Kg" },
         tags: [] 
     },
