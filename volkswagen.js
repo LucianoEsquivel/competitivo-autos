@@ -184,35 +184,35 @@ export const volkswagen = [
 
     { 
         id: "27VW", marca: "Volkswagen", modelo: "T-Cross", version: "Trendline 170 TSI MT", precioOferta: 35800000, precioLista: 50766550,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"tcrossTREND.png",
         specs: { motor: "1.0 Turbo", potencia: "95 CV", traccion: "4x2", transmision: "5 MT", torque: "170 Nm", capacidadCarga: "373 L / 420 L" },
         tags: [] 
     },
 
     { 
         id: "28VW", marca: "Volkswagen", modelo: "T-Cross", version: "Trendline 200TSI AT", precioOferta: 36600000, precioLista: 53379850,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"tcrossTREND200.png",
         specs: { motor: "1.0 Turbo", potencia: "116 CV", traccion: "4x2", transmision: "6 AT", torque: "200 Nm", capacidadCarga: "373 L / 420 L" },
         tags: [] 
     },
 
     { 
         id: "29VW", marca: "Volkswagen", modelo: "T-Cross", version: "Comfortline 200TSI AT", precioOferta: 40900000, precioLista: 57735900,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"tcrossCOMFORT.png",
         specs: { motor: "1.0 Turbo", potencia: "116 CV", traccion: "4x2", transmision: "6 AT", torque: "200 Nm", capacidadCarga: "373 L / 420 L" },
         tags: [] 
     },
 
     { 
         id: "30VW", marca: "Volkswagen", modelo: "T-Cross", version: "Highline 200TSI AT", precioOferta: 45900000, precioLista: 63728600,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"tcrossHIGH.png",
         specs: { motor: "1.0 Turbo", potencia: "116 CV", traccion: "4x2", transmision: "6 AT", torque: "200 Nm", capacidadCarga: "373 L / 420 L" },
         tags: [] 
     },
 
     { 
         id: "31VW", marca: "Volkswagen", modelo: "T-Cross", version: "Extreme 200TSI AT", precioOferta: 47500000, precioLista: 65330350,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"tcrossEX.png",
         specs: { motor: "1.4 Turbo", potencia: "150 CV", traccion: "4x2", transmision: "6 AT", torque: "250 Nm", capacidadCarga: "373 L / 420 L" },
         tags: [] 
     },
