@@ -289,35 +289,35 @@ export const volkswagen = [
 
     { 
         id: "42VW", marca: "Volkswagen", modelo: "Virtus", version: "MSI", precioOferta: 45645750, precioLista: 45645750,
-        segmento: "Sedan", tipo: "Sedan B", /*foto:"",*/
+        segmento: "Sedan", tipo: "Sedan B", foto:"virtusMSI.png",
         specs: { motor: "1.6 MSI", potencia: "110 CV", traccion: "4x2", transmision: "5 MT", torque: "155 Nm", capacidadCarga: "521 L" },
         tags: [] 
     },
 
     { 
         id: "43VW", marca: "Volkswagen", modelo: "Virtus", version: "Trendline", precioOferta: 48180550, precioLista: 48180550,
-        segmento: "Sedan", tipo: "Sedan B", /*foto:"",*/
+        segmento: "Sedan", tipo: "Sedan B", foto:"virtusTREND.png",
         specs: { motor: "1.6 MSI", potencia: "110 CV", traccion: "4x2", transmision: "5 MT", torque: "155 Nm", capacidadCarga: "521 L" },
         tags: [] 
     },
 
     { 
         id: "44VW", marca: "Volkswagen", modelo: "Virtus", version: "Comfortline", precioOferta: 49160050, precioLista: 49160050,
-        segmento: "Sedan", tipo: "Sedan B", /*foto:"",*/
+        segmento: "Sedan", tipo: "Sedan B", foto:"virtusTREND.png",
         specs: { motor: "1.6 MSI ", potencia: "110 CV", traccion: "4x2", transmision: "5 MT", torque: "155 Nm", capacidadCarga: "521 L" },
         tags: [] 
     },
 
     { 
         id: "45VW", marca: "Volkswagen", modelo: "Virtus", version: "Highline", precioOferta: 53498850, precioLista: 53498850,
-        segmento: "Sedan", tipo: "Sedan B", /*foto:"",*/
+        segmento: "Sedan", tipo: "Sedan B", foto:"virtusHIGH.png",
         specs: { motor: "1.0 Turbo 170 TSI", potencia: "101 CV", traccion: "4x2", transmision: "6 AT", torque: "170 Nm", capacidadCarga: "521 L" },
         tags: [] 
     },
 
     { 
         id: "46VW", marca: "Volkswagen", modelo: "Virtus", version: "Exclusive", precioOferta: 52500000, precioLista: 60297950,
-        segmento: "Sedan", tipo: "Sedan B", /*foto:"",*/
+        segmento: "Sedan", tipo: "Sedan B", foto:"virtusEX.png",
         specs: { motor: "1.4 Turbo 250 TSI", potencia: "150 CV", traccion: "4x2", transmision: "6 AT", torque: "250 Nm", capacidadCarga: "521 L" },
         tags: [] 
     },
