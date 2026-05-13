@@ -11,42 +11,34 @@ let estado = {
     filtroAlternativas: 'TODOS'
 };
 
-// --- UTILIDADES DE PRECIO Y SPECS ---
+// --- UTILIDADES DE PRECIO Y SPECS (INTACTAS) ---
 function analizarPrecio(auto) {
     const precio = auto.precioOferta || auto.precioLista;
     if (!precio) return { valorOriginal: 0, monedaOriginal: 'N/A', valorUSD: 0 };
-    
     const monedaOriginal = precio < 500000 ? 'USD' : 'ARS';
     const valorUSD = monedaOriginal === 'USD' ? precio : precio / estado.tasaCambio;
-    
     return { valorOriginal: precio, monedaOriginal, valorUSD };
 }
 
 function formatearPrecioMostrado(precioInfo) {
     if (precioInfo.valorOriginal === 0) return "Sin Información";
-    
     const valUSD = Math.round(precioInfo.valorUSD);
     const valARS = Math.round(precioInfo.valorUSD * estado.tasaCambio);
-    
     const strUSD = `USD ${valUSD.toLocaleString('es-AR')}`;
     const strARS = `ARS ${valARS.toLocaleString('es-AR')}`;
 
     if (estado.monedaVista === 'USD') return strUSD;
     if (estado.monedaVista === 'ARS') return strARS;
-    
     return `${strUSD} <br><span class="precio-ars">${strARS}</span>`;
 }
 
 function calcularDiferencia(precioAlt, precioPrinc) {
     if (precioAlt.valorOriginal === 0 || precioPrinc.valorOriginal === 0) return null;
-    
     const diffUSD = precioAlt.valorUSD - precioPrinc.valorUSD;
     const isMasCaro = diffUSD > 0;
     const signo = isMasCaro ? '+' : '-';
-    
     const absUSD = Math.abs(diffUSD);
     const absARS = absUSD * estado.tasaCambio;
-
     const strUSD = `${signo}USD ${Math.round(absUSD).toLocaleString('es-AR')}`;
     const strARS = `${signo}ARS ${Math.round(absARS).toLocaleString('es-AR')}`;
 
@@ -58,21 +50,16 @@ function calcularDiferencia(precioAlt, precioPrinc) {
     } else {
         diffStr = `${strUSD}<br><span style="font-size:0.75rem; font-weight:normal; color:inherit;">${strARS}</span>`;
     }
-
     return { isMasCaro, diffStr };
 }
 
 function compararSpecNumerica(valAlt, valPrinc) {
     if (!valPrinc) return valAlt;
-
     const numAlt = parseInt(valAlt);
     const numPrinc = parseInt(valPrinc);
-
     if (isNaN(numAlt) || isNaN(numPrinc)) return valAlt;
-
     const diff = numAlt - numPrinc;
     if (diff === 0) return valAlt;
-
     const unidad = valAlt.replace(numAlt.toString(), '').trim();
 
     if (diff > 0) {
@@ -84,61 +71,80 @@ function compararSpecNumerica(valAlt, valPrinc) {
 
 function formatearNombreSpec(clave) {
     const nombresLindos = {
-        motor: "Motor",
-        potencia: "Potencia",
-        transmision: "Transmisión",
-        traccion: "Tracción",
-        torque: "Torque",
-        capacidadCarga: "Carga/Baúl"
+        motor: "Motor", potencia: "Potencia", transmision: "Transmisión",
+        traccion: "Tracción", torque: "Torque", capacidadCarga: "Carga/Baúl"
     };
-
     if (nombresLindos[clave]) return nombresLindos[clave];
     return clave.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
 }
 
 function generarListaSpecs(auto, principal = null) {
     let html = '<ul class="specs-list">';
-    
     for (const [clave, valorOriginal] of Object.entries(auto.specs)) {
         if (!valorOriginal) continue; 
-
         let valorMostrado = valorOriginal;
-        
-        // --- SOLO COMPARAR ESTAS DOS CLAVES ---
         const clavesAComparar = ['potencia', 'capacidadCarga'];
 
         if (principal && principal.specs[clave] && clavesAComparar.includes(clave)) {
             valorMostrado = compararSpecNumerica(valorOriginal, principal.specs[clave]);
         }
-
-        html += `<li><span>${formatearNombreSpec(clave)}:</span> ${valorMostrado}</li>`;
+        // Ajuste HTML para alinear etiqueta y valor a la izquierda/derecha
+        html += `<li><span class="lbl">${formatearNombreSpec(clave)}</span> <span class="val">${valorMostrado}</span></li>`;
     }
-    
     html += '</ul>';
     return html;
 }
 
-// --- NAVEGACIÓN Y RENDER BÁSICO ---
+// --- NAVEGACIÓN ---
 function switchView(viewId) {
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
     document.getElementById(viewId).classList.remove('hidden');
-    
     estado.vistaActual = viewId;
-
     const esInicio = viewId === 'vista-marcas';
     document.getElementById('btn-home').classList.toggle('hidden', esInicio);
     document.getElementById('btn-volver').classList.toggle('hidden', esInicio);
     document.getElementById('controles-moneda').classList.toggle('hidden', viewId !== 'vista-dashboard');
 }
 
-function renderizarBotones(contenedorId, listaItems, onClickCallback) {
+// --- RENDERIZADO VISUAL MAESTRO ---
+function renderizarBotones(contenedorId, listaItems, onClickCallback, tipo = 'comun') {
     const contenedor = document.getElementById(contenedorId);
     contenedor.innerHTML = '';
+    
     listaItems.forEach(item => {
         const btn = document.createElement('button');
-        btn.className = 'menu-card';
-        btn.innerText = item;
-        btn.onclick = () => onClickCallback(item);
+        
+        if (tipo === 'marca') {
+            btn.className = 'menu-card marca-card';
+            const logoUrl = `img/logos/${item.toLowerCase()}.png`;
+            btn.innerHTML = `
+                <img src="${logoUrl}" alt="${item}" class="card-logo" onerror="this.style.display='none'">
+                <span class="marca-name">${item}</span>
+            `;
+            btn.onclick = () => onClickCallback(item);
+        } 
+        else if (tipo === 'familia') {
+            btn.className = 'menu-card familia-card';
+            const logoUrl = `img/logos/${estado.marcaSel.toLowerCase()}.png`;
+            btn.style.backgroundImage = `url('${logoUrl}')`;
+            btn.innerHTML = `
+                <div class="familia-overlay">
+                    <span class="familia-name">${item}</span>
+                </div>
+            `;
+            btn.onclick = () => onClickCallback(item);
+        } 
+        else if (tipo === 'version') {
+            btn.className = 'menu-card version-card';
+            btn.style.backgroundImage = `url('img/${item.foto}')`;
+            btn.innerHTML = `
+                <div class="version-overlay">
+                    <span class="version-name">${item.version}</span>
+                </div>
+            `;
+            btn.onclick = () => onClickCallback(item);
+        }
+
         contenedor.appendChild(btn);
     });
 }
@@ -146,13 +152,12 @@ function renderizarBotones(contenedorId, listaItems, onClickCallback) {
 // --- FLUJO DE SELECCIÓN ---
 function iniciarApp() {
     estado.tasaCambio = parseFloat(document.getElementById('input-dolar').value) || 1000;
-
     const marcas = [...new Set(vehiculos.map(v => v.marca))];
     switchView('vista-marcas');
     renderizarBotones('grid-marcas', marcas, (marca) => {
         estado.marcaSel = marca;
         mostrarFamilias();
-    });
+    }, 'marca');
 }
 
 function mostrarFamilias() {
@@ -162,27 +167,17 @@ function mostrarFamilias() {
     renderizarBotones('grid-familias', modelos, (modelo) => {
         estado.familiaSel = modelo;
         mostrarVersiones();
-    });
+    }, 'familia');
 }
 
 function mostrarVersiones() {
     const versiones = vehiculos.filter(v => v.marca === estado.marcaSel && v.modelo === estado.familiaSel);
     document.getElementById('titulo-versiones').innerText = `Versiones de ${estado.familiaSel}`;
     switchView('vista-versiones');
-    
-    const contenedor = document.getElementById('grid-versiones');
-    contenedor.innerHTML = '';
-    versiones.forEach(auto => {
-        const btn = document.createElement('button');
-        btn.className = 'menu-card';
-        // --- SOLO NOMBRE DE LA VERSIÓN ---
-        btn.innerHTML = `<strong>${auto.version}</strong>`; 
-        btn.onclick = () => {
-            estado.autoPrincipal = auto;
-            abrirDashboard();
-        };
-        contenedor.appendChild(btn);
-    });
+    renderizarBotones('grid-versiones', versiones, (auto) => {
+        estado.autoPrincipal = auto;
+        abrirDashboard();
+    }, 'version');
 }
 
 // --- DASHBOARD COMERCIAL ---
@@ -285,7 +280,7 @@ function renderizarDashboard() {
     });
 }
 
-// --- LÓGICA DRAG & DROP ---
+// --- LÓGICA DRAG & DROP (INTACTA) ---
 let draggedItem = null;
 
 function handleDragStart(e) {
@@ -293,34 +288,17 @@ function handleDragStart(e) {
     e.dataTransfer.effectAllowed = 'move';
     setTimeout(() => this.classList.add('dragging'), 0);
 }
-
-function handleDragOver(e) {
-    e.preventDefault(); 
-    e.dataTransfer.dropEffect = 'move';
-    return false;
-}
-
-function handleDragEnter(e) {
-    e.preventDefault();
-    if (this !== draggedItem) {
-        this.classList.add('drag-over');
-    }
-}
-
-function handleDragLeave(e) {
-    this.classList.remove('drag-over');
-}
-
+function handleDragOver(e) { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; return false; }
+function handleDragEnter(e) { e.preventDefault(); if (this !== draggedItem) this.classList.add('drag-over'); }
+function handleDragLeave(e) { this.classList.remove('drag-over'); }
 function handleDrop(e) {
     e.stopPropagation();
     this.classList.remove('drag-over');
-    
     if (draggedItem !== this) {
         const container = this.parentNode;
         const allItems = [...container.querySelectorAll('.card-vehiculo.alternativa')];
         const draggedIndex = allItems.indexOf(draggedItem);
         const droppedIndex = allItems.indexOf(this);
-        
         if (draggedIndex < droppedIndex) {
             container.insertBefore(draggedItem, this.nextSibling);
         } else {
@@ -329,12 +307,9 @@ function handleDrop(e) {
     }
     return false;
 }
-
 function handleDragEnd(e) {
     this.classList.remove('dragging');
-    document.querySelectorAll('.card-vehiculo.alternativa').forEach(card => {
-        card.classList.remove('drag-over');
-    });
+    document.querySelectorAll('.card-vehiculo.alternativa').forEach(card => card.classList.remove('drag-over'));
 }
 
 // --- EVENTOS DE INTERFAZ ---
@@ -352,7 +327,6 @@ document.querySelectorAll('.btn-moneda').forEach(btn => {
         document.querySelectorAll('.btn-moneda').forEach(b => b.classList.remove('active'));
         e.target.classList.add('active');
         estado.monedaVista = e.target.dataset.moneda;
-        
         if (!document.getElementById('vista-versiones').classList.contains('hidden')) mostrarVersiones();
         if (!document.getElementById('vista-dashboard').classList.contains('hidden')) renderizarDashboard();
     };
@@ -368,15 +342,10 @@ document.querySelectorAll('.btn-filtro').forEach(btn => {
 });
 
 document.getElementById('btn-home').onclick = iniciarApp;
-
-document.getElementById('btn-volver').addEventListener('click', () => {
-    if (estado.vistaActual === 'vista-dashboard') {
-        mostrarVersiones();
-    } else if (estado.vistaActual === 'vista-versiones') {
-        mostrarFamilias();
-    } else if (estado.vistaActual === 'vista-familias') {
-        iniciarApp(); 
-    }
-});
+document.getElementById('btn-volver').onclick = () => {
+    if (estado.vistaActual === 'vista-dashboard') mostrarVersiones();
+    else if (estado.vistaActual === 'vista-versiones') mostrarFamilias();
+    else if (estado.vistaActual === 'vista-familias') iniciarApp();
+};
 
 iniciarApp();

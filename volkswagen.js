@@ -105,7 +105,7 @@ export const volkswagen = [
         tags: [] 
     },
 
-    { 
+    {  
         id: "16VW", marca: "Volkswagen", modelo: "Nivus", version: "170 TSI", precioOferta: 30900000, precioLista: 43554600,
         segmento: "SUV", tipo: "SUV B", /*foto:"",*/
         specs: { motor: "1.0 Turbo", potencia: "95 CV", traccion: "4x2", transmision: "5 MT", torque: "165 Nm", capacidadCarga: "415 L" },

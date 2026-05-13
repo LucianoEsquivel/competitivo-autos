@@ -1,319 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
 :root {
-    --black-dietrich: #000000;
+    --black-dietrich: #111111;
     --gray-dark: #333333;
     --gray-medium: #888888;
-    --gray-light: #e0e0e0;
-    --white-bg: #f5f5f5;
+    --gray-light: #eaeaee;
+    --white-bg: #f8f9fa;
     --white: #ffffff;
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    --border-radius: 4px;
-    --color-plus: #d32f2f; /* Rojo sutil para precio mayor */
-    --color-minus: #388e3c; /* Verde sutil para precio menor */
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    --border-radius: 6px;
+    --color-plus: #d32f2f;
+    --color-minus: #388e3c;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--white-bg);
     color: var(--black-dietrich);
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 header {
     background-color: var(--black-dietrich);
     color: var(--white);
-    padding: 20px;
+    padding: 15px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--gray-dark);
+    border-bottom: 1px solid var(--gray-dark);
 }
 
-.logo { font-weight: 900; font-size: 1.5rem; letter-spacing: 4px; text-transform: uppercase; }
-
+.logo-header { height: 40px; width: auto; display: block; }
 .header-controls { display: flex; gap: 20px; align-items: center; }
+.controles-wrapper { display: flex; gap: 20px; align-items: center; }
+.cotizacion-box { display: flex; align-items: center; gap: 8px; }
 
-/* NUEVO: Contenedor para agrupar dólar y moneda */
-.controles-wrapper {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-/* Estilos para la cotización */
-.cotizacion-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* NUEVO: Estilo de botón para el link del Dólar */
 .btn-dolar-link {
-    font-size: 0.8rem;
-    color: var(--white);
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid var(--gray-medium);
-    padding: 6px 12px;
-    border-radius: var(--border-radius);
-    transition: all 0.3s ease;
-    cursor: pointer;
+    font-size: 0.75rem; color: var(--white); text-transform: uppercase;
+    text-decoration: none; border: 1px solid var(--gray-medium);
+    padding: 6px 12px; border-radius: var(--border-radius); transition: all 0.3s ease;
 }
-
-.btn-dolar-link:hover {
-    background: var(--white);
-    color: var(--black-dietrich);
-    border-color: var(--white);
-}
+.btn-dolar-link:hover { background: var(--white); color: var(--black-dietrich); border-color: var(--white); }
 
 #input-dolar {
-    padding: 6px;
-    border: 1px solid var(--gray-medium);
-    border-radius: var(--border-radius);
-    background-color: var(--white);
-    color: var(--black-dietrich);
-    font-weight: bold;
-    width: 90px;
-    text-align: center;
+    padding: 6px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);
+    font-weight: 600; width: 80px; text-align: center; font-family: 'Inter', sans-serif;
 }
 
-.toggle-moneda {
-    display: flex;
-    border: 1px solid var(--gray-medium);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-}
-
+.toggle-moneda { display: flex; border: 1px solid var(--gray-medium); border-radius: var(--border-radius); overflow: hidden; }
 .btn-moneda {
-    background: transparent;
-    color: var(--gray-light);
-    border: none;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: 0.3s;
+    background: transparent; color: #aaa; border: none; padding: 6px 14px;
+    cursor: pointer; font-size: 0.75rem; transition: 0.3s;
 }
+.btn-moneda.active { background: var(--white); color: var(--black-dietrich); font-weight: 600; }
 
-.btn-moneda.active { background: var(--white); color: var(--black-dietrich); font-weight: bold; }
-
-/* Actualizado para incluir el botón Volver */
 #btn-home, #btn-volver {
-    background: transparent;
-    color: var(--white);
-    border: 1px solid var(--white);
-    padding: 6px 12px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    transition: 0.3s;
+    background: transparent; color: var(--white); border: 1px solid var(--white);
+    padding: 6px 14px; cursor: pointer; font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 1px; transition: 0.3s; border-radius: var(--border-radius);
 }
-#btn-home:hover, #btn-volver:hover { 
-    background: var(--white); 
-    color: var(--black-dietrich); 
-}
+#btn-home:hover, #btn-volver:hover { background: var(--white); color: var(--black-dietrich); }
 
-main { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
-.view { animation: fadeIn 0.4s ease-out; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+main { max-width: 1300px; margin: 0 auto; padding: 40px 20px; }
 .hidden { display: none !important; }
 
-h2 { margin-bottom: 30px; text-transform: uppercase; font-size: 1.4rem; border-bottom: 2px solid var(--black-dietrich); display: inline-block; padding-bottom: 5px; }
+h2 { 
+    margin-bottom: 30px; text-transform: uppercase; font-size: 1.1rem; 
+    font-weight: 300; letter-spacing: 2px; border-bottom: 1px solid var(--gray-medium); 
+    display: inline-block; padding-bottom: 8px; 
+}
 
 .grid-menu {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 
+/* --- TARJETAS DE SELECCIÓN (Marcas, Familias, Versiones) --- */
 .menu-card {
     background: var(--white);
-    border: 1px solid var(--gray-light);
-    padding: 40px 20px;
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
+    border: none;
+    height: 180px; /* Altura fija para que no se rompa la grilla */
+    border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-    transition: 0.2s;
-}
-.menu-card:hover { background: var(--black-dietrich); color: var(--white); }
-
-/* --- DASHBOARD --- */
-.filtros-alternativas {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
     align-items: center;
-    font-size: 0.9rem;
+    justify-content: center;
+    flex-direction: column;
 }
-.btn-filtro {
-    padding: 5px 12px; border: 1px solid var(--gray-medium); background: var(--white); cursor: pointer; border-radius: 20px;
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
+
+/* Marca */
+.card-logo { max-width: 110px; max-height: 55px; object-fit: contain; margin-bottom: 15px; transition: 0.3s; }
+.marca-name { font-size: 0.85rem; letter-spacing: 2px; color: var(--gray-medium); font-weight: 400; text-transform: uppercase; }
+.menu-card.marca-card:hover { background: var(--black-dietrich); }
+.menu-card.marca-card:hover .card-logo { filter: brightness(0) invert(1); }
+.menu-card.marca-card:hover .marca-name { color: var(--white); }
+
+/* Familia */
+.familia-card { background-size: 55%; background-position: center; background-repeat: no-repeat; }
+.familia-overlay {
+    position: absolute; inset: 0; background: rgba(255,255,255,0.85); /* Efecto vidrio sobre el logo */
+    display: flex; align-items: center; justify-content: center; transition: background 0.3s;
+}
+.familia-name { font-size: 1.1rem; font-weight: 600; color: var(--black-dietrich); z-index: 2; letter-spacing: 1px; text-transform: uppercase; }
+.familia-card:hover .familia-overlay { background: rgba(0,0,0,0.85); }
+.familia-card:hover .familia-name { color: var(--white); }
+
+/* Versión */
+.version-card { background-size: cover; background-position: center; }
+.version-overlay {
+    position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+    display: flex; align-items: flex-end; justify-content: center; padding: 20px; transition: 0.3s;
+}
+.version-name { color: var(--white); font-weight: 400; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
+.version-card:hover .version-overlay { background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.3) 100%); }
+
+/* --- DASHBOARD Y COMPARADOR (Blindado) --- */
+.filtros-alternativas { display: flex; gap: 10px; margin-bottom: 20px; align-items: center; font-size: 0.85rem; }
+.btn-filtro { padding: 6px 14px; border: 1px solid var(--gray-light); background: var(--white); cursor: pointer; border-radius: 20px; color: var(--gray-dark); transition: 0.2s; }
 .btn-filtro.active { background: var(--black-dietrich); color: var(--white); border-color: var(--black-dietrich); }
 
+/* Esto asegura que las columnas no se caigan */
 .dashboard-layout {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     align-items: flex-start;
+    width: 100%;
 }
 
-.zona-principal {
-    flex: 0 0 340px;
-    position: sticky;
-    top: 20px;
-}
-
-.zona-alternativas {
-    flex: 1;
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 20px;
-}
+.zona-principal { flex: 0 0 340px; position: sticky; top: 20px; }
+.zona-alternativas { flex: 1; display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; }
 
 /* Tarjetas de Vehículos */
 .card-vehiculo {
-    background: var(--white);
-    border: 1px solid var(--gray-light);
-    box-shadow: var(--shadow);
-    border-radius: var(--border-radius);
-    padding: 20px;
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
+    background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow);
+    padding: 25px; min-width: 320px; display: flex; flex-direction: column;
 }
-
 .card-vehiculo.principal { border-top: 4px solid var(--black-dietrich); }
-.card-vehiculo.alternativa { 
-    border-top: 4px solid var(--gray-medium); 
-    cursor: grab; 
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-}
+.card-vehiculo.alternativa { border-top: 4px solid var(--gray-light); cursor: grab; transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s; }
 .card-vehiculo.alternativa:active { cursor: grabbing; }
 
-/* EFECTOS DRAG & DROP */
-.card-vehiculo.dragging {
-    opacity: 0.4;
-    transform: scale(0.95);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    border: 2px solid var(--black-dietrich);
-}
+/* DRAG & DROP EFECTOS */
+.card-vehiculo.dragging { opacity: 0.5; transform: scale(0.98); border: 2px solid var(--black-dietrich); }
+.card-vehiculo.drag-over { transform: translateY(-5px); border: 2px dashed var(--gray-medium); }
 
-.card-vehiculo.drag-over {
-    transform: translateY(-10px);
-    border: 2px dashed var(--black-dietrich);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
+.marca-mod { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--black-dietrich); }
+.version-mod { font-size: 0.85rem; color: var(--gray-medium); margin-bottom: 15px; text-transform: uppercase; }
 
-.marca-mod { font-size: 1.3rem; font-weight: 800; text-transform: uppercase; }
-.version-mod { font-size: 0.9rem; color: var(--gray-medium); margin-bottom: 15px; }
+.vehiculo-img-container { width: 100%; height: 140px; display: flex; justify-content: center; align-items: center; margin-bottom: 15px; }
+.vehiculo-img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-/* Contenedor para la foto del vehículo */
-.vehiculo-img-container {
-    width: 100%;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.vehiculo-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-/* Contenedor de precio unificado */
-.precio-container {
-    margin-bottom: 15px;
-    border-bottom: 1px solid var(--gray-light);
-    padding-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    min-height: 70px;
-}
-
-.diff-precio {
-    font-weight: 800;
-    font-size: 0.9rem;
-    margin-bottom: 4px;
-    line-height: 1.1;
-}
+.precio-container { margin-bottom: 15px; border-bottom: 1px solid var(--gray-light); padding-bottom: 15px; display: flex; flex-direction: column; justify-content: flex-end; min-height: 75px; }
+.diff-precio { font-weight: 600; font-size: 0.85rem; margin-bottom: 4px; }
 .diff-mas { color: var(--color-plus); }
 .diff-menos { color: var(--color-minus); }
-
-.precio-final { font-size: 1.5rem; font-weight: bold; line-height: 1.1; }
-.precio-ars { font-size: 1rem; color: var(--gray-medium); font-weight: normal; }
+.precio-final { font-size: 1.5rem; font-weight: 700; line-height: 1.1; }
+.precio-ars { font-size: 0.9rem; color: var(--gray-medium); font-weight: 400; }
 
 .specs-list { list-style: none; font-size: 0.85rem; margin-bottom: 20px; flex-grow: 1; }
-.specs-list li { padding: 5px 0; border-bottom: 1px dotted var(--gray-light); }
-.specs-list span { font-weight: bold; display: inline-block; width: 130px; }
+.specs-list li { padding: 8px 0; border-bottom: 1px solid #f2f2f2; display: flex; align-items: center; justify-content: space-between; }
+.specs-list span.lbl { font-weight: 400; color: var(--gray-medium); text-transform: uppercase; font-size: 0.75rem; }
+.specs-list span.val { font-weight: 600; color: var(--black-dietrich); text-align: right; }
 
-/* Colores para las especificaciones numéricas */
-.spec-mejor { color: var(--color-minus); font-weight: bold; }
-.spec-peor { color: var(--color-plus); font-weight: bold; }
+.spec-mejor { color: var(--color-minus); font-weight: 600; font-size: 0.8rem; margin-left: 5px; }
+.spec-peor { color: var(--color-plus); font-weight: 600; font-size: 0.8rem; margin-left: 5px; }
 
 .btn-ir {
-    background: var(--black-dietrich);
-    color: var(--white);
-    border: none;
-    padding: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    margin-top: auto;
+    background: var(--white); color: var(--black-dietrich); border: 1px solid var(--gray-light);
+    padding: 12px; text-transform: uppercase; font-weight: 600; font-size: 0.75rem;
+    letter-spacing: 1px; cursor: pointer; width: 100%; margin-top: auto; border-radius: var(--border-radius); transition: 0.3s;
 }
-.btn-ir:hover { background: var(--gray-dark); }
-
-
-
-/* Estilo para el logo del header */
-.logo-header {
-    height: 45px; /* Ajustá el tamaño según prefieras */
-    width: auto;
-    display: block;
-}
-
-/* Nuevos estilos para las tarjetas de marcas */
-.marca-card {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    padding: 30px !important;
-    min-height: 180px;
-}
-
-.card-logo {
-    max-width: 120px;
-    height: auto;
-    max-height: 60px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.marca-card:hover .card-logo {
-    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
-}
-
-.marca-card span {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    color: var(--gray-medium);
-}
-
-.marca-card:hover span {
-    color: var(--white);
-}
-
-/* Mejoras visuales generales para los títulos */
-h2 {
-    font-weight: 300;
-    letter-spacing: 1px;
-}
+.btn-ir:hover { background: var(--black-dietrich); color: var(--white); border-color: var(--black-dietrich); }
