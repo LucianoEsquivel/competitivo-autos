@@ -240,28 +240,28 @@ export const volkswagen = [
 
     { 
         id: "35VW", marca: "Volkswagen", modelo: "Tera", version: "Trend", precioOferta: 29900000, precioLista: 36755250,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"teraTREND.png",
         specs: { motor: "1.6 MSI", potencia: "110 CV", traccion: "4x2", transmision: "5 MT", torque: "155 Nm", capacidadCarga: "350 L" },
         tags: [] 
     },
 
     { 
         id: "36VW", marca: "Volkswagen", modelo: "Tera", version: "Comfortline", precioOferta: 35200000, precioLista: 41561750,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"teraCOMFORT.png",
         specs: { motor: "1.0 Turbo", potencia: "101 CV", traccion: "4x2", transmision: "6 AT", torque: "170 Nm", capacidadCarga: "350 L" },
         tags: [] 
     },
 
     { 
         id: "37VW", marca: "Volkswagen", modelo: "Tera", version: "Hightline", precioOferta: 40200000, precioLista: 45609400,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"teraHIGH.png",
         specs: { motor: "1.0 Turbo", potencia: "101 CV", traccion: "4x2", transmision: "6 AT", torque: "170 Nm", capacidadCarga: "350 L" },
         tags: [] 
     },
 
     { 
         id: "38VW", marca: "Volkswagen", modelo: "Tera", version: "Outfit", precioOferta: 43900000, precioLista: 46747750,
-        segmento: "SUV", tipo: "SUV B", /*foto:"",*/
+        segmento: "SUV", tipo: "SUV B", foto:"teraOUTFIT.png",
         specs: { motor: "1.0 Turbo", potencia: "101 CV", traccion: "4x2", transmision: "6 AT", torque: "170 Nm", capacidadCarga: "350 L" },
         tags: [] 
     },
