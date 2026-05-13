@@ -4,34 +4,34 @@ export const audi = [
 
     { 
         id: "1A", marca: "Audi", modelo: "A1", version: "Sportback 30 TFSI", precioOferta: 36000, precioLista: 41300,
-        segmento: "Hatchback", tipo: "Hatch B", /*foto:"",*/
+        segmento: "Hatchback", tipo: "Hatch B", foto:"audiA1.png",
         specs: { motor: "1.0 TFSI", potencia: "116 CV", traccion: "4x2", transmision: "S-tronic 7 AT", torque: "200 Nm", capacidadCarga: "335 L" },
         tags: [] 
     },
 
     { 
         id: "2A", marca: "Audi", modelo: "A3", version: "Sportback 1.4 TFSI", precioOferta: 44000, precioLista: 45500,
-        segmento: "Hatchback", tipo: "Hatch C", 
+        segmento: "Hatchback", tipo: "Hatch C", foto:"audiA3.png",
         specs: { motor: "1.4 TFSI", potencia: "150 CV", traccion: "4x2", transmision: "S-tronic 8 AT", torque: "250 Nm", capacidadCarga: "380 L" },
         tags: [] 
     },
 
     { 
         id: "3A", marca: "Audi", modelo: "A3", version: "Sportback 1.4 TFSI Advanced", precioOferta: 52600, precioLista: 52600,
-        segmento: "Hatchback", tipo: "Hatch C", 
+        segmento: "Hatchback", tipo: "Hatch C", foto:"audiA3.png",
         specs: { motor: "1.4 TFSI", potencia: "150 CV", traccion: "4x2", transmision: "Triptronic 8 AT", torque: "250 Nm", capacidadCarga: "380 L" },
         tags: [] 
     },
     
     { 
         id: "4A", marca: "Audi", modelo: "A3", version: "Sportback 2.0 TFSI S-line", precioOferta: 61000, precioLista: 62700,
-        segmento: "Sedan", tipo: "Sedan C", 
+        segmento: "Sedan", tipo: "Sedan C", foto:"audiA3.png",
         specs: { motor: "2.0 TFSI", potencia: "190 CV", traccion: "4x2", transmision: "S-tronic 7 AT", torque: "320 Nm", capacidadCarga: "380 L" },
         tags: [] 
     },
     { 
         id: "5A", marca: "Audi", modelo: "A3", version: "Sedan 1.4 TFSI", precioOferta: 45000, precioLista: 46000,
-        segmento: "Sedan", tipo: "Sedan C",
+        segmento: "Sedan", tipo: "Sedan C", foto:"audiA3Sedan.png",
         specs: { motor: "1.4 TFSI", potencia: "150 CV", traccion: "4x2", transmision: "S-tronic 8 AT", torque: "250 Nm", capacidadCarga: "425 L" },
         tags: [] 
      

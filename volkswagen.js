@@ -2,105 +2,105 @@ export const volkswagen = [
 
     { 
         id: "1VW", marca: "Volkswagen", modelo: "Amarok", version: "Trendline TDI MT 4x2 G2", precioOferta: 43300000, precioLista: 54980250,
-        segmento: "Pickup", tipo: "mediana", foto:"amarokTREND.jpg",
+        segmento: "Pickup", tipo: "mediana", foto:"amarokTREND.png",
         specs: { motor: "2.0 TDI", potencia: "140 CV", traccion: "4x2", transmision: "6 MT", torque: "340 Nm", capacidadCarga: "1000 Kg" },
         tags: [] 
     },
 
     { 
         id: "2VW", marca: "Volkswagen", modelo: "Amarok", version: "Trendline TDI MT 4x4 G2", precioOferta: 53200000, precioLista: 63653650,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokTREND.png",
         specs: { motor: "2.0 BiTurbo", potencia: "180 CV", traccion: "4x4", transmision: "6 MT", torque: "340 Nm", capacidadCarga: "1000 Kg" },
         tags: [] 
     },
 
     { 
         id: "3VW", marca: "Volkswagen", modelo: "Amarok", version: "Comfortline TDI MT 4x2 G2", precioOferta: 49200000, precioLista: 60969000,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokCOMFORT.png",
         specs: { motor: "2.0 BiTurbo", potencia: "180 CV", traccion: "4x2", transmision: "6 MT", torque: "400 Nm", capacidadCarga: "1030 Kg" },
         tags: [] 
     },
 
     { 
         id: "4VW", marca: "Volkswagen", modelo: "Amarok", version: "Comfortline TDI MT 4x2 SE G2", precioOferta: 49200000, precioLista: 60969000,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokCOMFORT.png",
         specs: { motor: "2.0 BiTurbo", potencia: "180 CV", traccion: "4x2", transmision: "6 MT", torque: "400 Nm", capacidadCarga: "1030 Kg" },
         tags: [] 
     },
 
     { 
         id: "5VW", marca: "Volkswagen", modelo: "Amarok", version: "Comfortline TDI AT 4x2 G2", precioOferta: 53500000, precioLista: 66629600,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokCOMFORT.png",
         specs: { motor: "2.0 BiTurbo", potencia: "180 CV", traccion: "4x2", transmision: "8 AT", torque: "420 Nm", capacidadCarga: "822 Kg" },
         tags: [] 
     },
 
     { 
         id: "6VW", marca: "Volkswagen", modelo: "Amarok", version: "Comfortline TDI AT 4x2 SE G2", precioOferta: 53500000, precioLista: 66629600,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokCOMFORT.png",
         specs: { motor: "2.0 BiTurbo", potencia: "180 CV", traccion: "4x2", transmision: "8 AT", torque: "420 Nm", capacidadCarga: "822 Kg" },
         tags: [] 
     },
 
     { 
         id: "7VW", marca: "Volkswagen", modelo: "Amarok", version: "Comfortline V6 AT 4x4 G2", precioOferta: 58500000, precioLista: 79179500,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokCOMFORTV6.png",
         specs: { motor: "3.0 V6 TDI", potencia: "258 CV", traccion: "4x4", transmision: "8 AT", torque: "580 Nm", capacidadCarga: "889 Kg" },
         tags: [] 
     },
 
     { 
         id: "8VW", marca: "Volkswagen", modelo: "Amarok", version: "Highline TDI MT 4x2 G2", precioOferta: 67471000, precioLista: 67471000,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokHIGHLINE.png",
         specs: { motor: "2.0 BiTurbo", potencia: "180 CV", traccion: "4x2", transmision: "6 MT", torque: "400 Nm", capacidadCarga: "998 Kg" },
         tags: [] 
     },
 
     { 
         id: "9VW", marca: "Volkswagen", modelo: "Amarok", version: "Highline TDI AT 4x2 G2", precioOferta: 57900000, precioLista: 74071550,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokHIGHLINE.png",
         specs: { motor: "2.0 BiTurbo", potencia: "180 CV", traccion: "4x2", transmision: "8 AT", torque: "420 Nm", capacidadCarga: "772 Kg" },
         tags: [] 
     },
 
     { 
         id: "10VW", marca: "Volkswagen", modelo: "Amarok", version: "Highline TDI AT 4x2 SE G2", precioOferta: 57900000, precioLista: 74071550,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokHIGHLINE.png",
         specs: { motor: "2.0 BiTurbo", potencia: "180 CV", traccion: "4x2", transmision: "8 AT", torque: "420 Nm", capacidadCarga: "772 Kg" },
         tags: [] 
     },
 
     { 
         id: "11VW", marca: "Volkswagen", modelo: "Amarok", version: "Highline V6 AT 4x4 G2", precioOferta: 68500000, precioLista: 92857600,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokHIGHLINEV6.png",
         specs: { motor: "3.0 V6 TDI", potencia: "258 CV", traccion: "4x4", transmision: "8 AT", torque: "580 Nm", capacidadCarga: "699 Kg" },
         tags: [] 
     },
 
     { 
         id: "12VW", marca: "Volkswagen", modelo: "Amarok", version: "Extreme V6 AT 4x4 G2", precioOferta: 73800000, precioLista: 99096300,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokEXTREME.png",
         specs: { motor: "3.0 V6 TDI", potencia: "258 CV", traccion: "4x4", transmision: "8 AT", torque: "580 Nm", capacidadCarga: "656 Kg" },
         tags: [] 
     },
 
     { 
         id: "13VW", marca: "Volkswagen", modelo: "Amarok", version: "Hero V6 AT 4x4 G2", precioOferta: 75800000, precioLista: 99096300,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokHERO.png",
         specs: { motor: "3.0 V6 TDI", potencia: "258 CV", traccion: "4x4", transmision: "8 AT", torque: "580 Nm", capacidadCarga: "656 Kg" },
         tags: [] 
     },
 
     { 
         id: "14VW", marca: "Volkswagen", modelo: "Amarok", version: "Black Style V6 AT 4x4 G2", precioOferta: 79500000, precioLista: 99370900,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokBLACK.png",
         specs: { motor: "3.0 V6 TDI", potencia: "258 CV", traccion: "4x4", transmision: "8 AT", torque: "580 Nm", capacidadCarga: "656 Kg" },
         tags: [] 
     },
 
     { 
         id: "15VW", marca: "Volkswagen", modelo: "Amarok", version: "Black Style V6 AT 4x4 SE G2", precioOferta: 79500000, precioLista: 99370900,
-        segmento: "Pickup", tipo: "mediana", /*foto:"",*/
+        segmento: "Pickup", tipo: "mediana", foto:"amarokBLACK.png",
         specs: { motor: "3.0 V6 TDI", potencia: "258 CV", traccion: "4x4", transmision: "8 AT", torque: "580 Nm", capacidadCarga: "656 Kg" },
         tags: [] 
     },
